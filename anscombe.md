@@ -33,3 +33,16 @@ First, go to [this pen](https://codepen.io/molliemarie/pen/vQwrBm) and fork it. 
 
 Let's get started!!
 
+**Steps to choose from (initial steps are necessary)**
+1. Create an svg
+2. Using a data join, add a circle for every element of our array.
+3. Position the circles based on their x and y attributes.
+4. Add a scale!
+5. Add text to circles labeling the coordinate positions
+6. Redo original join using groups
+7. Add axes
+8. Add margins
+9. Add gridlines
+10. Add colorscale
+11. Add hover interactions
+12. Add buttons / dataswap function if time
