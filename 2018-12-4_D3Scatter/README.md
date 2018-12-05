@@ -11,7 +11,9 @@ If you haven't yet, join the Chicago Data Viz Community Slack ([bit.ly/ChiDataVi
 - **#D3js** (optional) - for chatting about D3 going forward
 
 ## CodePen
-You’ll need a CodePen account to participate in the workshop exercises fully. You can [get one for free here](http://codepen.io/).
+You’ll need a CodePen account to participate in the workshop exercises fully. You can [get one for free here](http://codepen.io/). 
+
+Once you've joined, you can find all of the codepends necessary for this workshop [here](https://codepen.io/collection/XwdbBJ/).
 
 ## Slides
 
