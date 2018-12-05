@@ -4,7 +4,7 @@ This repo holds resources from an introductory talk and workshop on D3.js. Prese
 
 Connect with Mollie: [twitter](https://twitter.com/MollzMP) // [email](mailto:molliempettit@gmail.com) // [linkedin](https://www.linkedin.com/in/molliempettit/)
 
-# Getting Set Up
+# Getting Set Up / Intro
 
 ## Join D3.js Slack
 If you haven't yet, join the Chicago Data Viz Community Slack ([bit.ly/ChiDataVizSlackInvite](https://join.slack.com/t/chicagodataviz/shared_invite/enQtNDY0ODMzNDU0OTE5LTgyYjYwNDA1ZjA1MTZhZjk5MGRjOGY4OTU2YWVmYmQ1MDMwMTJmYTQ5NzRlZTRkYWI3ZGUxODJhYTZkYzhjNTA)) and join the following channels:
