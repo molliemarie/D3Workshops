@@ -2,7 +2,7 @@
 
 Now that we have had a chance to explore Anscombe's Quartet a bit, let's plot it out with D3! :D
 
-We'll make a fairly basic plot with no interactions to start that will end up looking something like this:
+Our creation will end up looking something like this:
 
 <img src="imgs/anscombe1.png" width="500px;"/>
 
