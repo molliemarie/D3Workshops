@@ -19,7 +19,7 @@ You’ll need a CodePen account to participate in the workshop exercises fully. 
 - [What is D3.js? / When should I use it?](https://github.com/molliemarie/SharedSlides/blob/master/whatIsD3.pdf)
 
 ## Further Learnings / Fancy Examples
-Further learnings and fancy examples [located here](d3examples.md).
+Further learnings and fancy examples [located here](../d3examples.md).
 
 # Ok, Let's get coding!
 
