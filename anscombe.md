@@ -33,7 +33,7 @@ First, go to [this pen](https://codepen.io/molliemarie/pen/vQwrBm) and fork it. 
 
 Let's get started!!
 
-**Steps to choose from (initial steps are necessary)**
+**Steps**
 1. Create an svg
 2. Using a data join, add a circle for every element of our array.
 3. Position the circles based on their x and y attributes.
