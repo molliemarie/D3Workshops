@@ -5,7 +5,10 @@ This repo holds resources from an introductory talk and workshop on D3.js. Prese
 Connect with Mollie: [twitter](https://twitter.com/MollzMP) // [email](mailto:molliempettit@gmail.com) // [linkedin](https://www.linkedin.com/in/molliempettit/)
 
 ## Join D3.js Slack
-If you haven't yet, join the [Chicago Data Viz Community Slack](https://join.slack.com/t/chicagodataviz/shared_invite/enQtNDY0ODMzNDU0OTE5LTgyYjYwNDA1ZjA1MTZhZjk5MGRjOGY4OTU2YWVmYmQ1MDMwMTJmYTQ5NzRlZTRkYWI3ZGUxODJhYTZkYzhjNTA) and join the **#workshops** channel. If useful links surface during the website, they will be posted in this channel. Additionally, you might want to consider joining the **d3js** channel as well. 
+If you haven't yet, join the [Chicago Data Viz Community Slack](https://join.slack.com/t/chicagodataviz/shared_invite/enQtNDY0ODMzNDU0OTE5LTgyYjYwNDA1ZjA1MTZhZjk5MGRjOGY4OTU2YWVmYmQ1MDMwMTJmYTQ5NzRlZTRkYWI3ZGUxODJhYTZkYzhjNTA) and join the following channels:
+
+- **#workshops** - for sharing links during the workshop
+- **#D3js** (optional) - for chatting about D3 going forward
 
 ## CodePen
 You’ll need a CodePen account to participate in the workshop exercises fully. You can [get one for free here](http://codepen.io/).
