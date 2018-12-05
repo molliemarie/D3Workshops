@@ -1,6 +1,6 @@
 # Create Your First D3.js Scatter Plot!
 
-This repo holds resources from an introductory talk and workshop on D3.js. Presented by Mollie Pettit at a [Chicago Data Viz Community](https://www.meetup.com/Chicago-Data-Viz-Community/) event
+This repo holds resources from an introductory talk and workshop on D3.js. Presented by Mollie Pettit at a [Chicago Data Viz Community](https://www.meetup.com/Chicago-Data-Viz-Community/) event on [Create your first D3.js scatter plot!](https://www.meetup.com/Chicago-Data-Viz-Community/events/255637315/).
 
 Connect with Mollie: [twitter](https://twitter.com/MollzMP) // [email](mailto:molliempettit@gmail.com) // [linkedin](https://www.linkedin.com/in/molliempettit/)
 
