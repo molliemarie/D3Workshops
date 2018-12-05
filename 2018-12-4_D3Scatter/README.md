@@ -23,7 +23,7 @@ Further learnings and fancy examples [located here](../d3examples.md).
 
 # Ok, Let's get coding!
 
-## Exercise: [Make the same bar plot in three different ways!](../barChart3Ways.md)
+## Exercise: Make the same scatter plot in three different ways!
 
 In these exercises you will be making the same bar plot in three different ways: 
 
