@@ -4,6 +4,8 @@ This repo holds resources from an introductory talk and workshop on D3.js. Prese
 
 Connect with Mollie: [twitter](https://twitter.com/MollzMP) // [email](mailto:molliempettit@gmail.com) // [linkedin](https://www.linkedin.com/in/molliempettit/)
 
+# Getting Set Up
+
 ## Join D3.js Slack
 If you haven't yet, join the Chicago Data Viz Community Slack ([bit.ly/ChiDataVizSlackInvite](https://join.slack.com/t/chicagodataviz/shared_invite/enQtNDY0ODMzNDU0OTE5LTgyYjYwNDA1ZjA1MTZhZjk5MGRjOGY4OTU2YWVmYmQ1MDMwMTJmYTQ5NzRlZTRkYWI3ZGUxODJhYTZkYzhjNTA)) and join the following channels:
 
@@ -37,9 +39,11 @@ In these exercises you will be making the same bar plot in three different ways:
 
 We'll now build our first full chart by plotting one of the Ambscombe data sets in a scatter plot.
 
-# Getting Started with a Local Server
+# Local Servers
 
 We won't be using a local server today, but if you're going to be toying around with D3 a lot, you'll want to use a text editor and a local server rather than coding in codepen.
+
+## Getting Started with a Local Server
 
 1. Download "starter.html" and "ufo.csv" and save it in a folder
 2. Use Terminal (Mac) or Command Prompt (PC), which both represent the command line, and you'll want to go to the folder you added the files to.
@@ -57,7 +61,7 @@ In some cases, you can view local HTML files directly in your web browser. Howev
 
 For this reason, it is much more reliable to load your page via a web server. Although you could use a remote web server, it is much, much faster to store and host everything locally (meaning, on the same computer, the one right in front of you). It is a strange idea, to use your local computer to host and serve files to itself, but you can think about it as the different programs talking to each other: the browser program requests files from the server program, which responds by serving them back.
 
-## Helpful links used during workshop
+# Helpful links used during workshop
  * [Margin Conventions](https://bl.ocks.org/mbostock/3019563)
  * [Data Joins](https://bost.ocks.org/mike/join/)
  * [Chaining Syntax](http://alignedleft.com/tutorials/d3/chaining-methods)
