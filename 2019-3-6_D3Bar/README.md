@@ -1,3 +1,25 @@
+# d3.js workshop - Build your first bar plot!
+
+## Announcements:
+- Thanks to Civis for hosting! 
+- Upcoming Meetups: 
+    - [Data Viz Book Club](https://www.meetup.com/Chicago-Data-Viz-Community/events/258829612/)
+    - [Leveling Up Leaflet](https://www.meetup.com/Chicago-Data-Viz-Community/events/258172864/)
+    - More talks scheduled in April, May, and June to be posted soon!
+- [Data Visualization Society](https://www.datavisualizationsociety.com/)
+- Connect:
+    Meetup Twitter: @DataVizChi
+    Mollie's Twitter: @ MollzMP
+    [Chicago Data Viz Community Slack Invite](bit.ly/ChiDataVizSlackInvite)
+
+## Agenda:
+
+1) Build a simple bar plot three ways.
+    - using HTML
+    - using d3.js
+    - using d3.js with data joins
+2) Build a full bar plot of Chicago Crime Data, complete with interactions
+
 # Build a bar plot three different ways:
 
 You'll be making the same bar plot in three different ways. Each time, you will end up something that looks like this:
