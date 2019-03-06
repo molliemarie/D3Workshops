@@ -8,7 +8,7 @@ You'll be making the same bar plot in three different ways. Each time, you will 
 
 This is an exercise to practice basic HTML, SVG, and CSS syntax. It is also designed to demonstrate that something that _looks like_ a chart on a website is actually just a collection of simple HTML elements. 
 
-You'll want to open up [this blockbuilder link](https://bl.ocks.org/molliemarie/5a9d80fd5aa4e122cd26abcabc2d5017), fork it, and then perform the following steps (instructions are also in the file):
+You'll want to open up [this blockbuilder link](https://blockbuilder.org/molliemarie/5a9d80fd5aa4e122cd26abcabc2d5017), fork it, and then perform the following steps (instructions are also in the file):
 
 1) Make a container `<div>` in which you'll render your content 
 2) Create a `<p>` element in which you write "My Bar Chart" 
