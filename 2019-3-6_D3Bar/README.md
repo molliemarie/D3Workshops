@@ -32,7 +32,9 @@ And, here we go!
   
 ## Steps:
 
-1. First, go to [this project's blocksbuilder link](https://blockbuilder.org/molliemarie/22c1107f4226f64cba9df6a1f4e09408) and fork it. You'll notice the code is set up like above, plus I've added styling that will add a pink border around any svg we might draw.
+### 1. Fork blocksbuilder project
+
+First, go to [this project's blocksbuilder link](https://blockbuilder.org/molliemarie/22c1107f4226f64cba9df6a1f4e09408) and fork it. You'll notice the code is set up like above, plus I've added styling that will add a pink border around any svg we might draw.
 
   ```
   svg {
@@ -67,7 +69,7 @@ And, here we go!
   ```
   
   
-2. Add an SVG element of width 720 and height 400.
+### 2. Add an SVG element of width 720 and height 400.
 
 ```
 var width = 720;
@@ -80,7 +82,9 @@ var svg = d3.select("body").append("svg") //grabs body and appends an svg
 
 What you're doing here is selecting the body tag, adding an svg, and then defining the width and height attributes.
 
-3. Now, let's create our scales! We'll need to use two different types of scale for a bar chart.
+### 3. Create our scales! 
+
+We'll need to use two different types of scale for a bar chart.
 
 For any scale, we need to pass in domain and range values. Domain represents the data being passed in and the Range represents the data being returned. For example. Let's say you the are trying to place dots across a screen; the data has a min of 0 and a max of 20, and you want that data to extend the full width of the svg, which is 720. The domain would be [0, 20], and the range would be [0, 720]. Scott Murray does a great job of explaining domain and range [here](https://alignedleft.com/tutorials/d3/scales) (although keep in mind that the d3 code shown here is for v3 and therefore different than our code here). 
 
