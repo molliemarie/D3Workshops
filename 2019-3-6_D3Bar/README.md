@@ -30,8 +30,8 @@ And, here we go!
 
   ```
   
-    **Steps:**
-  
+## Steps:
+
 1. First, go to [this project's blocksbuilder link](https://blockbuilder.org/molliemarie/22c1107f4226f64cba9df6a1f4e09408) and fork it. You'll notice the code is set up like above, plus I've added styling that will add a pink border around any svg we might draw.
 
   ```
