@@ -620,5 +620,37 @@ d3.select("#countLabel").remove();
 
 # Futher Learning
 
-TKTK add
+  - **What should I do to keep learning?*** 
+    - Keep making examples
+    - Small incremental steps is fine
+  - What are some ways to do that?
+    - Try to remake something someone else has done
+    - Try to add additional functionality to things you've already created or to someone else's example
+    - Search for examples in [blocksbuilder](https://blockbuilder.org/search)
+    - Read [Interactive Data Visualization for the Web](https://www.amazon.com/Interactive-Data-Visualization-Web-Introduction/dp/1491921285/ref=pd_lpo_sbs_14_t_0?_encoding=UTF8&psc=1&refRID=E4SJ53PCAA5KA87ARSH5) by Scott Murray. Best book I've seen on d3.
+    - Read blogs and tutorials
+       - [Visual Cinnamon Blog](https://www.visualcinnamon.com/blog)
+       - [Mike Bostock's Blog](https://bost.ocks.org/mike/)
+       - [Jim Vallandingham's blog](http://vallandingham.me/)
+       - [DashingD3](https://www.dashingd3js.com/) has a number of free tutorials. (Although some are only accessible with a membership.)
+
+    - Find cool datasets!
+      - [Data is Plural](https://tinyletter.com/data-is-plural)
+      - [Chicago Data Portal](https://data.cityofchicago.org)
+      - [US Government Open Data](https://www.data.gov)
+      - [Google around for cool data!](http://lmgtfy.com/?q=interesting+datasets)
+      - Anything you're interested in learning more about...
+      - Keep a list of things you want to explore or try!
+    - You can keep using this repo!
+      - Go through resources, and make your own go-to list
+      - Use the examples we've done in class for your own projects
+      - Try to combine other blocks
+      - SAVE YOUR WORK
+  - Good Ways to Share your Work (short of creating a webapp)
+      - Screenshots (easy)
+      - Host locally 
+      - [gh-pages](https://pages.github.com/)
+      - [bl.ocks](https://bl.ocks.org)
+  - [d3 plugins](https://github.com/d3/d3-plugins)
+
 
