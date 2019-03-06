@@ -8,7 +8,7 @@ You'll be making the same bar plot in three different ways. Each time, you will 
 
 This is an exercise to practice basic HTML, SVG, and CSS syntax. It is also designed to demonstrate that something that _looks like_ a chart on a website is actually just a collection of simple HTML elements. 
 
-You'll want to open up [this pen](https://codepen.io/molliemarie/pen/GdJYRx), fork it, and then perform the following steps (instructions are also in the file):
+You'll want to open up [this blockbuilder link](https://bl.ocks.org/molliemarie/5a9d80fd5aa4e122cd26abcabc2d5017), fork it, and then perform the following steps (instructions are also in the file):
 
 1) Make a container `<div>` in which you'll render your content 
 2) Create a `<p>` element in which you write "My Bar Chart" 
@@ -46,7 +46,7 @@ rect {
 
 This is an exercise to practice manipulating the DOM with D3. 
 
-You'll want to open up your [this pen](https://codepen.io/molliemarie/pen/BxNGEp), fork it, and perform the following steps (instructions are also in the file). All steps will be completed using d3.js, and should be completed in the `<script>` section at the bottom of the file.
+You'll want to open up your [this blockbuilder link](https://blockbuilder.org/molliemarie/002c8426bff4e03419d9d71358112fc4), fork it, and perform the following steps (instructions are also in the file). All steps will be completed using d3.js, and should be completed in the `<script>` section at the bottom of the file.
 
 1) Select your `body` and append a `div` element in which you'll render your content. To do this, you'll use the `d3.select()` method, and then the `.append()` method to append your element to your selection.
 2) Append a new `p` element to the `div` you just created, and use the `.text()` method to set the text to "My Bar Chart"
@@ -98,7 +98,7 @@ You'll want to open up your [this pen](https://codepen.io/molliemarie/pen/BxNGEp
 
 This is an exercise to practice manipulating the DOM D3 using the **[data-join](https://bost.ocks.org/mike/join/)**. 
 
-You'll want to open [this pen](https://codepen.io/molliemarie/pen/rvVoMP), fork it, and then perform the following steps (instructions are also in the file). All steps will be completed using d3.js, and should be completed in the `<script>` section at the bottom of the file. Preliminary steps have been completed for you.
+You'll want to open [this blocksbuilder link](https://blockbuilder.org/molliemarie/d3a89f4b30746bfd8c34103fa8b58406), fork it, and then perform the following steps (instructions are also in the file). All steps will be completed using d3.js, and should be completed in the `<script>` section at the bottom of the file. Preliminary steps have been completed for you.
 
 1) Append 3 `rect` elements inside of your `<svg>` **using the data join**. To do this, you'll use the following syntax:
 
