@@ -380,6 +380,113 @@ Alright, now time for some simple interactions!
 
 TKTK: List of what we'll do:
 
-### 13. 
+### 13. Color change on hover
+
+Let's start simple and add a color change when hovering over a bar. To do this, we will chain a [mousenter](https://developer.mozilla.org/en-US/docs/Web/Events/mouseenter) event to the bar creation code:
+
+This is the code we'll be adding:
+
+```
+  	.on("mouseenter", function(d) {
+    
+        d3.select(this)
+          .attr("fill", "yellow");
+    }
+```
+
+We'll also, add in the line `console.log(d3.select(this))` so we can look at what's happening under the hood.
+
+Here's what it looks like all together:
+
+```
+  svg.selectAll(".bar")
+    .data(data2018)
+    .enter().append("rect")
+    .attr("class", "bar")
+    .attr("x", function(d) { return xScale(d.violation); })
+    .attr("y", function(d) { return yScale(d.count); })
+    .attr("width", xScale.bandwidth())
+    .attr("height", function(d) { return height - yScale(d.count); })
+    .attr("fill", "red")
+  	.on("mouseenter", function(d) {
+    
+      console.log(d3.select(this))
+
+      d3.select(this)
+        .attr("fill", "yellow");
+    }
+
+
+```
+
+This is a good time to talk about the Javascript keyword [`this`](https://www.w3schools.com/js/js_this.asp), which refers to the object it belongs to. For example, notice that I've added `console.log(d3.select(this))` into the mouseenter event. Open your console and start hoving over bubbles. You'll notice that each time you hover, a json is printed in the console. If you expand the outputs, you'll notice they are describing the bubble over which you just hovered. Therefore, by selecting `thi`s, we are basically grabbing that bar so that we can make changes to just specific bar.
+
+### 14. Remove new color on mouseleave
+
+We now have the yellow color appearing on mouseenter, but then it doesn't go away. We'll fix this by adding a `mouseleave` event right below the `mouseenter` event. 
+
+```
+  .on("mouseleave", function(d) {
+      d3.select(this)
+        .attr("fill", "red");
+    });
+```
+
+### 15 Adding transition and duration
   
-  
+Let's go one step further and utilize the [`d3-transition`](https://github.com/d3/d3-transition). A transition is a selection-like interface for animating changes to the DOM. Instead of applying changes instantaneously, transitions smoothly interpolate the DOM from its current state to the desired target state over a given duration, which we can also assign. It's pretty great!  Try adjusting the `mouseenter` event so that it looks like the following:
+
+```
+        d3.select(this)
+        	.transition()
+        	.duration(500)
+          .attr("fill", "yellow");
+```
+
+**Note:** When filling in duration, 1 second has a value of 1000. So, by assigning a value of 500, we're telling it to take half a second to complete the transition
+
+You'll also want to add something similar to the `mouseleave` event:
+
+```
+  .on("mouseleave", function(d) {
+      d3.select(this)
+        .transition()
+        .duration(500)
+        .attr("fill", "red");
+    });
+```
+
+Try adjusting the duration and see what happens!
+
+**Note:** Another thing that can be adjusted is [`ease`](https://github.com/d3/d3-transition#transition_ease), but we won't be getting into that here. 
+
+### 16. Label count on hover
+
+Let's add one more interaction!! Let's add the count value above the bar when you hover over it. There are a LOT of different ways to do this, but we'll be making this happen by by adding the following into the `mouseenter` event:
+
+```
+        //Get this bar's x/y values, then augment for the label
+        var xPosition = parseFloat(d3.select(this).attr('x')) + xScale.bandwidth() / 2;
+        var yPosition = parseFloat(d3.select(this).attr("y")) - 5;
+
+        //Create the label
+        svg.append("text") //add text
+           .attr("id", "countLabel") //give it the id 'countLabel'
+           .attr("x", xPosition) //assign x position - calculated above
+           .attr("y", yPosition) //assign y position - calculated above
+           .attr("text-anchor", "middle") //set text anchor to the middle, so that the text shows up in center of bar
+           .attr("font-family", "sans-serif") //add some styling (this can also be done in css section)
+           .attr("font-size", "11px")
+           .attr("font-weight", "bold")
+           .text(d.count);
+```
+
+And again, we need to explicitly tell the code to remove the text after we stop hovering over the bar. We can do this by adding the followine to the 'mouseleave' event
+
+```
+d3.select("#countLabel").remove();
+```
+
+(**Note:** Can also look into [d3-tip](https://github.com/Caged/d3-tip) to add tooltips easily.)
+
+
