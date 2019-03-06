@@ -9,3 +9,25 @@ We're going to create a bar plot, showing the counts of each crime in Chicago. I
 TKTK: change starter steps.
 
 And, here we go!
+
+**Note:** Since [Mike Bostock](https://bost.ocks.org/mike/) (creator of d3.js) doesn't technically make valid HTML pages, we're not going to either — here's how we'll start our own empty HTML pages from here on out:
+
+  ```
+  <!DOCTYPE html>
+  <meta charset="utf-8">
+
+  <style type="text/css">
+    /*css to go here*/
+  </style>
+
+  <body></body>
+
+ <script src="https://d3js.org/d3.v4.min.js"></script>
+ 
+  <script>
+    //JS to go here
+  </script>
+
+  ```
+  
+  
