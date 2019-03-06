@@ -252,7 +252,7 @@ Let's talk about what's happening here:
 
 **Let's take a look at the `elements` tab in the developer tools to drive the point home**
 
-### Styling
+## Styling
 
 Ok, so we've completed our task of creating a bar chart. However, it could definitely use some styling. Let's tackle that!
 
@@ -320,13 +320,58 @@ For example, I found that an x adjustment of 7 and a y adjustment of -8 worked w
     .style('text-anchor', 'start');
 ```
 
-3. Using a data join, add a `rect` for every element of our array. Give it a radius 5 and a class, `ufoCircle'. Inspect it in the console. (You can pull up a Javascript console by clicking console in the bottom left corner of the pen)
- 5. Position the circles based on their `cx` and `cy` attributes. How does SVG interpret these positions?
- 6. We'll need to add a [scale](https://github.com/d3/d3-scale/blob/master/README.md).
- 7. Let's label the count of each using text. At this point, we'll talk about how we can avoid this second data join and make our code a bit more efficient.
- 8. Redo the original join, using groups first, then appending circles and text. Note SVG [transformation](http://www.w3.org/TR/SVG/coords.html) documentation, which is not that fun. 
- 9. Maybe [axes](https://github.com/d3/d3-axis/blob/master/README.md) are in order?  
- 10. We might need to move our axes around. We'll go through the math. Also, maybe add some styles?
- 11. The margins are a problem, and they will always be. Here's [a great trick](https://bl.ocks.org/mbostock/3019563) we'll use on every chart we make from here on out.
+### 10. Add a title. 
+
+We'll need to add a new `div` within the `body` element in the html section. You can then simply add a `h1` tag within this new div.
+
+Add the following inside the `body` tags near the top of the page:
+
+```
+  <div id=#titleDiv> 
+    <h1>Crime in Chicago in 2018</h1>
+  </div>
+```
+
+### 11. Text formatting
+
+Perhaps we'd also like to add some text formatting to the y axis. For example, instead of reading 10,000, 15,000, etc., let's change the y axis so that it reads 10k, 15k, 20k, etc. You will do this using `.tickFormat`, like so:
+
+```
+var yAxis = d3.axisLeft(yScale)
+  .tickFormat(d3.format(`.2s`));
+```
+
+(On your own time, check out [`d3-format` documentation](https://github.com/d3/d3-format) and try playing around with different formatting options.)
+
+### 12. Lowercase x axis
+
+I personally don't like having all of the words capitalized in the x axis. Let's fix this! 
+
+We can add this function into the top of our code:
+
+```
+function titleCase(str) {
+  // lowercases each word, only capitalizing the first letter of each word
+   var splitStr = str.toLowerCase().split(' ');
+   for (var i = 0; i < splitStr.length; i++) {
+       // You do not need to check if i is larger than splitStr length, as your for does that for you
+       // Assign it back to the array
+       splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+   }
+   // Directly return the joined string
+   return splitStr.join(' '); 
+}
+```
+
+Then, within the formatting loop, we can pass our violation text into this `titleCase` function:
+
+```
+  data.forEach(function(d) {
+    d.count = +d.count; 
+    d.year = +d.year; 
+    d.violation = titleCase(d['Primary Type']);  // EDITED LINE
+  });
+
+```
   
   
