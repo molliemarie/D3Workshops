@@ -4,8 +4,6 @@ You'll be making the same bar plot in three different ways. Each time, you will 
 
 ![bar plot](imgs/barplot.png)
 
-**Note:** Since Mike doesn't [technically](https://bl.ocks.org/mbostock/3885304) make valid HTML pages, we're not going to either.
-
 ## Part I: Using HTML to make a bar plot
 
 This is an exercise to practice basic HTML, SVG, and CSS syntax. It is also designed to demonstrate that something that _looks like_ a chart on a website is actually just a collection of simple HTML elements. 
