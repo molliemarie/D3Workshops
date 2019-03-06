@@ -44,6 +44,11 @@ And, here we go!
   
   First, we're using the the `d3.csv()` module of [`d3-request`](https://github.com/d3/d3-request) to load in our data. This allows us to load in data from a csv file; the module transforms it from it's current format to the json format that d3.js likes. 
   
+  ```
+  // Reading in data here, then calling "ready" function:
+  d3.csv("ChiCrime.csv", ready)
+  ```
+  
   Additionally, the code is being formatted so that it will be easier to use later. 
   
   ```
