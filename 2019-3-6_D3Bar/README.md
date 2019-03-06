@@ -218,6 +218,108 @@ And the full code for that section will look like so:
     .call(xAxis);
 ```
 
+Great! The x axis labels are still a bit messed up, but we're going to handle that later. First, let's get some bars on the screen!
+
+### 7. Adding bars
+
+Let's look at the code and talk about what's happening here.
+
+```
+  svg.selectAll(".bar") // selecting all elements with the class 'bar'
+    .data(data2018) //bind data
+    .enter().append("rect") // append rectangle elements
+    .attr("class", "bar") //assign a class of 'bar'
+    .attr("x", function(d) { return xScale(d.violation); }) // Assign x coordinates based on the x scale we created
+    .attr("y", function(d) { return yScale(d.count); }) //// Assign y coordinates based on the y scale we created
+    .attr("width", xScale.bandwidth()) //assign width
+    .attr("height", function(d) { return height - yScale(d.count); }) //assign height
+    .style("fill", "red") //assign color
+ }
+```
+
+Let's talk about what's happening here:
+
+- We select all elements with the class `bar`, which in this case do not yet exist
+- We bind the data to the selected elements, creating placeholders
+- We choose the `enter()` selection (which we won't go into too much detail today) and append a rectangle for each placeholder element that was created during the data bind
+- Next, we assign a variety of attributes. (The necessary attributes for a bar plot are `x`, `y`, `width`, and `height`.)
+- We first assign a class of `bar` to each rectangle element
+- The x coordinates are determined based on the x scale we created, `xScale`; the x Band Scaling Function takes in the x and produces a number in the range specified by rangeRound.
+- The y coordinates are determined based on the y scale we created, `xScale`; the y coordinate is determined by passing the frequency of the data object bound to the specific element to the y linear scaling function.
+- The width of the rectangle is determined by the rangeBand of the x band scaling function. Luckily, d3 does this calculation for you when you create the scale so that you don't have to; all you need to do is call assign the width of the bar to the `bandwidth` associated with the scale you created.
+- Height is calculated for each rectangle. We've already determined the y values, so what is it that the height is doing? I'd like you to look at how we're calculating this. The height of the rectangle is calculated as the difference of the height of the inner drawing space and the value assigned to count after it has gone through the y linear scaling function. This is done in this way because the Y axis has been inverted by the y scaling function for values passed into it, but not for the construction of SVG Rectangles. I suggest you draw a picture of what's happening here. Try out some calculations by hand to get a better understanding of what's being done. (We can also go over this at the start of next class if necessary). 
+- A fill is assigned to each rectangle. In this example, they are given a fill of red, but you can choose whichever color you like.
+
+**Let's take a look at the `elements` tab in the developer tools to drive the point home**
+
+### Styling
+
+Ok, so we've completed our task of creating a bar chart. However, it could definitely use some styling. Let's tackle that!
+
+Styling steps:
+- add padding between bars
+- x axis labels
+- add a title
+- text formatting
+
+### 8. Add padding between bars
+
+Right now the bars are right next to one another. Let's add some padding between the bars. You can define padding when you first assign `xScale`, like so:
+
+```
+  var xScale = d3.scaleBand()
+    .domain(data2018.map(function(d) { return d.violation; }))
+    .padding([.1]) //NEW LINE HERE
+    .rangeRound([0, width]);
+```
+
+### 9. Fixing x axis labels
+
+Our x axis is currently too jumbled to read. Let's do some adjustment to the x axis to fix this
+
+a) We can start by using `transform, rotate` to make it so that the words don't overlap. 
+
+Below where you assigned the variable `xAxisGroup`, insert the following code
+
+```
+  xAxisGroup
+    .selectAll('text')
+    .attr('transform', 'rotate(45)')
+```
+
+What you're doing here is selecting the text and rotating the text forty-five degrees. Now save and refresh your page to see happened.
+
+b) 
+
+You'll see that this doesn't look quite right yet. This is because by default, the text is anchored in the middle of the word. We can fix this be assigning a different `text-anchor`, like so:
+
+```
+  xAxisGroup
+    .selectAll('text')
+    .attr('transform', 'rotate(45)')
+    .style('text-anchor', 'start');
+```
+
+c) That looks much better, but the text is still being cut-off. Fix this by adjusting the bottom margin so that you can see all of the text. (You may need to adjust the right margin as well.)
+
+d) Ok, it's almost there, but upon closer inspection one can see that the words are still a bit off. Let's use `transform, translate` to adjust the words in the x and y direction. You don't need a new line for this, but can actually assign `translate` right along with `rotate`, like so:
+
+```
+  xAxisGroup
+    .selectAll('text')
+    .attr('transform', 'rotate(45) translate(x, y)') //replace `x` and `y` with numbers. Play around; try out different x and y values until it looks right.
+    .style('text-anchor', 'start');
+```
+
+For example, I found that an x adjustment of 7 and a y adjustment of -8 worked well.  
+
+```
+  xAxisGroup
+    .selectAll('text')
+    .attr('transform', 'rotate(45) translate(7, -8)')
+    .style('text-anchor', 'start');
+```
+
 3. Using a data join, add a `rect` for every element of our array. Give it a radius 5 and a class, `ufoCircle'. Inspect it in the console. (You can pull up a Javascript console by clicking console in the bottom left corner of the pen)
  5. Position the circles based on their `cx` and `cy` attributes. How does SVG interpret these positions?
  6. We'll need to add a [scale](https://github.com/d3/d3-scale/blob/master/README.md).
