@@ -8,9 +8,9 @@
     - More talks scheduled in April, May, and June to be posted soon!
 - [Data Visualization Society](https://www.datavisualizationsociety.com/)
 - Connect:
-    Meetup Twitter: @DataVizChi
-    Mollie's Twitter: @ MollzMP
-    [Chicago Data Viz Community Slack Invite](bit.ly/ChiDataVizSlackInvite)
+    - Meetup Twitter: @DataVizChi
+    - Mollie's Twitter: @ MollzMP
+    - [Chicago Data Viz Community Slack Invite](bit.ly/ChiDataVizSlackInvite)
 
 ## Agenda:
 1) What is d3.js?
