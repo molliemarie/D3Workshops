@@ -112,9 +112,111 @@ Let's define our xScale like so:
     .rangeRound([0, width]);
 ```
 
-Read more about why we use `.rangeRound()` [here](https://github.com/d3/d3-scale#continuous_rangeRound)
+Read more about why we use `.rangeRound()` [here](https://github.com/d3/d3-scale#continuous_rangeRound).
 
-4. 
+### 4. Create axes
+
+For our x axis, we want our ticks to be on the bottom of the axis (rather than the top). Therefore, we'll be using the axis generator [`d3.axisBottom`](https://github.com/d3/d3-axis/blob/master/README.md#axisBottom). This constructs a new bottom-oriented axis generator for the given scale, with empty tick arguments, a tick size of 6 and padding of 3. In this orientation, ticks are drawn below the horizontal domain path. This generator creation will look like so:
+
+```
+var xAxis = d3.axisBottom(xScale);
+```
+
+But now we need to use this axis generator to put the axis elements on the page. Because this axis generator will be creating many different elements, we're going to need to put all of these elements into a group on the page. Putting them into a group will allow us to manipulate them as a group later. So, let's grab out svg element we created earlier, append a group element (using `g` tag), assign classes `x` and `axis`, and call our xAxis. The full code for `xAxis` will look like so:
+
+```
+  var xAxis = d3.axisBottom(xScale);
+
+  var xAxisGroup = svg.append("g")
+    .attr("class","x axis") //assigning classes `x` and `axis`
+    .call(xAxis);
+```
+
+Now, let's do the same for the y axis. This time we will be using [`d3.axisLeft`](https://github.com/d3/d3-axis/blob/master/README.md#axisLeft) so that the ticks will appear on the left, and assigning classes `y` and `axis`.
+
+```
+  var yAxis = d3.axisLeft(yScale);
+
+  var yAxisGroup = svg.append("g")
+    .attr("class","y axis")
+    .call(yAxis);
+```
+
+### Hmm... what doesn't look right?
+
+You'll notice a couple things look funny at this point. 
+
+- the x axis is located at the top
+- the y axis is nowhere to be found
+- the x axis labels run into one another. 
+
+For now, we'll just worry about the first two points, and will get to the label issue at the end.
+
+### 5. Finding the y axis
+
+First of all, let's check in the elements tab to see if the y axis is showing up on the page.
+
+A simple way to fix the hidden y axis issue is to add margins to our svg. Here's a [great template](https://bl.ocks.org/mbostock/3019563) for doing this. We're going to use the code from this page as a template from our file, replacing our current svg definition.
+
+First define the margin object with properties for the four sides (clockwise from the top, as in CSS).
+
+```
+var margin = {top: 20, right: 10, bottom: 20, left: 10};
+```
+
+Then define width and height as the inner dimensions of the chart area.
+
+```
+var width = 720 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
+```
+
+Lastly, define svg as a G element that translates the origin to the top-left corner of the chart area.
+
+```
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+```
+
+So, all together:
+
+```
+var margin = {top: 20, right: 10, bottom: 20, left: 10};
+
+var width = 720 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+```
+
+You may need to adjust the margins a bit until you can see the numbers on the y axis. (Hint, I found a left margin of 40 worked well.)
+
+### 6. adjusting the x axis
+
+We'll be using [`transform`](https://www.tutorialspoint.com/d3js/d3js_svg_transformation.htm) and assigning a `translate` value to `xAxisGroup` fix the location of the x axis. 
+
+What we're doing here is assigning the x and y values that the axis needs to adjust. In this case, we don't need the axis to adjust at all in the x direction (so will be passing in a value of 0), and we need it to move down to the bottom of the svg (so will be passing in a value of height). The single line:
+
+
+```
+.attr("transform","translate(0," + height + ")")
+```
+
+And the full code for that section will look like so:
+
+```
+  var xAxisGroup = svg.append("g")
+    .attr("class","x axis")
+    .attr("transform","translate(0," + height + ")")
+    .call(xAxis);
+```
 
 3. Using a data join, add a `rect` for every element of our array. Give it a radius 5 and a class, `ufoCircle'. Inspect it in the console. (You can pull up a Javascript console by clicking console in the bottom left corner of the pen)
  5. Position the circles based on their `cx` and `cy` attributes. How does SVG interpret these positions?
