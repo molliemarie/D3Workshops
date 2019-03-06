@@ -6,7 +6,7 @@ We're going to create a bar plot, showing the counts of each crime in Chicago. I
 
 ![static scatter](imgs/finishedBar2018.png)
 
-TKTK: change starter steps.
+**First off, you'll need to go to [this project's blocksbuilder link](https://blockbuilder.org/molliemarie/22c1107f4226f64cba9df6a1f4e09408) and fork it.**
 
 And, here we go!
 
@@ -34,7 +34,7 @@ And, here we go!
 
 ### 1. Fork blocksbuilder project
 
-First, go to [this project's blocksbuilder link](https://blockbuilder.org/molliemarie/22c1107f4226f64cba9df6a1f4e09408) and fork it. You'll notice the code is set up like above, plus I've added styling that will add a pink border around any svg we might draw.
+If you haven't yet, go to [this project's blocksbuilder link](https://blockbuilder.org/molliemarie/22c1107f4226f64cba9df6a1f4e09408) and fork it. You'll notice the code is set up like above, plus I've added styling that will add a pink border around any svg we might draw.
 
   ```
   svg {
@@ -376,9 +376,10 @@ Then, within the formatting loop, we can pass our violation text into this `titl
 
 ## Interactions!
 
-Alright, now time for some simple interactions! 
+Alright, now time for some simple interactions! We will make it so that on hover:
 
-TKTK: List of what we'll do:
+- the color of the bar changes
+- a count label appears above the bar
 
 ### 13. Color change on hover
 
@@ -480,6 +481,8 @@ Let's add one more interaction!! Let's add the count value above the bar when yo
            .attr("font-weight", "bold")
            .text(d.count);
 ```
+
+### 17. Remove label count
 
 And again, we need to explicitly tell the code to remove the text after we stop hovering over the bar. We can do this by adding the followine to the 'mouseleave' event
 
