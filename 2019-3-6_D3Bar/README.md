@@ -10,7 +10,7 @@ We're going to create a bar plot, showing the counts of each crime in Chicago. I
 
 ![static scatter](imgs/finishedBar2018.png)
 
-**First off, you'll need to go to [this project's blocksbuilder link](https://blockbuilder.org/molliemarie/22c1107f4226f64cba9df6a1f4e09408) and fork it.**
+**First off, you'll need to go to [this project's blocksbuilder link](https://blockbuilder.org/molliemarie/22c1107f4226f64cba9df6a1f4e09408) and fork it.** You can find the finished product [here](https://blockbuilder.org/molliemarie/06630abcdb4bc9f2dccd206df7850a42) for help / comparison along the way. 
 
 And, here we go!
 
