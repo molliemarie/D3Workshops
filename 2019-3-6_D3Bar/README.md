@@ -67,9 +67,52 @@ And, here we go!
   ```
   
   
-2. think about the format we want our data in.
-3. Add an SVG element of width 720 and height 400.
-4. Using a data join, add a `circle` for every element of our array. Give it a radius 5 and a class, `ufoCircle'. Inspect it in the console. (You can pull up a Javascript console by clicking console in the bottom left corner of the pen)
+2. Add an SVG element of width 720 and height 400.
+
+```
+var width = 720;
+var height = 400;
+
+var svg = d3.select("body").append("svg") //grabs body and appends an svg
+    .attr("width", width)
+    .attr("height", height);
+```
+
+What you're doing here is selecting the body tag, adding an svg, and then defining the width and height attributes.
+
+3. Now, let's create our scales! We'll need to use two different types of scale for a bar chart.
+
+For any scale, we need to pass in domain and range values. Domain represents the data being passed in and the Range represents the data being returned. For example. Let's say you the are trying to place dots across a screen; the data has a min of 0 and a max of 20, and you want that data to extend the full width of the svg, which is 720. The domain would be [0, 20], and the range would be [0, 720]. Scott Murray does a great job of explaining domain and range [here](https://alignedleft.com/tutorials/d3/scales) (although keep in mind that the d3 code shown here is for v3 and therefore different than our code here). 
+
+For the y axis, we'll be using a [linear scale](https://github.com/d3/d3-scale/blob/master/README.md#linear-scales). A linear scale constructs a new continuous scale with the specified domain and range. Linear scales are a good default choice for continuous quantitative data because they preserve proportional differences. Each range value y can be expressed as a function of the domain value x: y = mx + b.
+
+Our domain min here will be 0 (because that is good practice for bar charts) and the domain max will be the maximum count in the data (which we will find using [`d3.max`](https://github.com/d3/d3-array#max)).
+
+```
+  var yScale = d3.scaleLinear()
+    .domain([0, d3.max(data2018, function(d) { return d.count; })])
+    .range([height, 0]);
+```
+
+It's important to note here that one would think that the range min would be 0 and the range max would be height. However, in the DOM, y is counted from top down, but we want it to count from bottom up. Inverting the y axis does this for us in a simple way.
+
+For the x axis, we'll be using a [d3 band scale](https://github.com/d3/d3-scale/blob/master/README.md#scaleBand). Band scales are like [ordinal scales](https://github.com/d3/d3-scale/blob/master/README.md#ordinal-scales) except the output range is continuous and numeric. Discrete output values are automatically computed by the scale by dividing the continuous range into uniform bands. Band scales are typically used for bar charts with an ordinal or categorical dimension. 
+
+![static scatter](imgs/bandScale.png)
+
+Let's define our xScale like so:
+
+```
+  var xScale = d3.scaleBand()
+    .domain(data2018.map(function(d) { return d.violation; }))
+    .rangeRound([0, width]);
+```
+
+Read more about why we use `.rangeRound()` [here](https://github.com/d3/d3-scale#continuous_rangeRound)
+
+4. 
+
+3. Using a data join, add a `rect` for every element of our array. Give it a radius 5 and a class, `ufoCircle'. Inspect it in the console. (You can pull up a Javascript console by clicking console in the bottom left corner of the pen)
  5. Position the circles based on their `cx` and `cy` attributes. How does SVG interpret these positions?
  6. We'll need to add a [scale](https://github.com/d3/d3-scale/blob/master/README.md).
  7. Let's label the count of each using text. At this point, we'll talk about how we can avoid this second data join and make our code a bit more efficient.
