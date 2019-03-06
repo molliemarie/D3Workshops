@@ -13,12 +13,12 @@
     [Chicago Data Viz Community Slack Invite](bit.ly/ChiDataVizSlackInvite)
 
 ## Agenda:
-
-1) Build a simple bar plot three ways.
+1) What is d3.js?
+2) Build a simple bar plot three ways.
     - using HTML
     - using d3.js
     - using d3.js with data joins
-2) Build a full bar plot of Chicago Crime Data, complete with interactions
+3) Build a full bar plot of Chicago Crime Data, complete with interactions
 
 # Build a bar plot three different ways:
 
